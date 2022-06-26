@@ -5,4 +5,94 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-image: url('./images/main.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  background: #000;
+  width: 100%;
+  height: 500vh;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+.title {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  z-index: 1;
+  opacity: 0;
+}
+
+.title.active {
+  opacity: 1;
+  transition: all 3s;
+}
+
+section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.img-wrap {
+  position: relative;
+  top: 40%;
+  height: 40%;
+  width: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.img-wrap.active {
+  width: 40vw;
+  opacity: 1;
+  transition: opacity 1s, width 2s;
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40vw;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.6);
+}
+
+.img-wrap.active > .img {
+  transform: scale(1);
+  transition: 1s ease-out;
+}
+
+h2 {
+  position: absolute;
+  font-size: 2.3rem;
+  top: 70%;
+  letter-spacing: 2px;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+h2.active {
+  opacity: 1;
+  transition: opacity 3s;
 }
